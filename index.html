@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Star Rating Component - Feedback Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Hidden checkbox to trigger the thank you screen transition -->
+  <input type="checkbox" id="screen-trigger" class="screen-toggle">
+
+  <div class="card-wrapper">
+    <!-- Screen 1: Feedback Form -->
+    <div class="feedback-screen">
+      <h2>We'd love your feedback</h2>
+      <p class="subtitle">Please share your experience and valuable insights with us so we can keep improving.</p>
+      
+      <div class="star-rating">
+        <input type="radio" id="star5" name="rating" value="5">
+        <label for="star5" title="5 stars">
+          <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </label>
+
+        <input type="radio" id="star4" name="rating" value="4">
+        <label for="star4" title="4 stars">
+          <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </label>
+
+        <input type="radio" id="star3" name="rating" value="3">
+        <label for="star3" title="3 stars">
+          <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </label>
+
+        <input type="radio" id="star2" name="rating" value="2">
+        <label for="star2" title="2 stars">
+          <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </label>
+
+        <input type="radio" id="star1" name="rating" value="1">
+        <label for="star1" title="1 star">
+          <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </label>
+      </div>
+
+      <textarea placeholder="Tell us more about your experience..."></textarea>
+
+      <!-- The label acts as the submit button, checking the hidden checkbox -->
+      <label for="screen-trigger" class="submit-btn">Submit Feedback</label>
+    </div>
+
+    <!-- Screen 2: Thank You Message -->
+    <div class="thank-you-screen">
+      <div class="heart-icon">❤️</div>
+      <h2>Thank you so much!</h2>
+      <p>Your feedback means the world to us. We truly appreciate you taking the time to share your journey, and we're so incredibly grateful to have you with us.</p>
+    </div>
+  </div>
+
+</body>
+</html>
