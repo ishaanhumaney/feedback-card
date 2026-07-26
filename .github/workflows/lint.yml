@@ -1,0 +1,27 @@
+name: Lint HTML & CSS
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint:
+    name: Validate Code Structure
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run HTMLHint
+        run: npx htmlhint index.html
+
+      - name: Run Stylelint
+        run: npx stylelint style.css --config '{"rules": {"block-no-empty": true}}'
