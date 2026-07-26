@@ -43,7 +43,7 @@ You don't need to install Node.js, run `npm install`, or set up a local build ch
 ## Project Structure
 
 ```text
-zero-js-feedback-card/
+feedback-card/
 ├── .github/
 │   └── workflows/
 │       └── html-css-lint.yml    # Continuous integration for style & structural validation
