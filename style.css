@@ -1,0 +1,147 @@
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #fcf8ee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.card-wrapper {
+  background: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+h2 {
+  margin: 0 0 0.5rem 0;
+  color: #1a1a1a;
+  font-size: 1.5rem;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 0 0 1.5rem 0;
+}
+
+/* Star Rating Setup */
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.star-rating input[type="radio"],
+.screen-toggle {
+  display: none;
+}
+
+.star-rating label {
+  cursor: pointer;
+  width: 42px;
+  height: 42px;
+  transition: transform 0.1s ease;
+}
+
+.star-rating label svg {
+  fill: #e5e7eb;
+  transition: fill 0.2s ease;
+}
+
+.star-rating label:hover {
+  transform: scale(1.1);
+}
+
+.star-rating input[type="radio"]:checked ~ label svg,
+.star-rating label:hover ~ label svg,
+.star-rating label:hover svg {
+  fill: #ffb703;
+}
+
+/* Textarea styling */
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  box-sizing: border-box;
+  resize: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+textarea:focus {
+  border-color: #4f46e5;
+}
+
+/* Submit Button styling */
+.submit-btn {
+  display: block;
+  background-color: #4f46e5;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: #4338ca;
+}
+
+/* Screen Transitions via Hidden Checkbox */
+.thank-you-screen {
+  display: none;
+  text-align: center;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.heart-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  animation: pulse 1.5s infinite;
+}
+
+.thank-you-screen p {
+  color: #4b5563;
+  line-height: 1.6;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* When the hidden input is checked, switch screens */
+.screen-toggle:checked ~ .card-wrapper .feedback-screen {
+  display: none;
+}
+
+.screen-toggle:checked ~ .card-wrapper .thank-you-screen {
+  display: block;
+}
+
+/* Simple animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
